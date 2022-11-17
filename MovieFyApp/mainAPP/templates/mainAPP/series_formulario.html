@@ -1,0 +1,28 @@
+{% extends 'mainAPP/base.html' %}
+
+{% block contenido %}
+
+<h2 style="margin: 30px;">AGREGAR SERIES AL BD</h2>
+
+<form style="margin: 30px;" action="/moviefy/series/crear/" method="post">
+    {% csrf_token %}
+
+    <p style="color:black; margin-bottom: 45px;">
+        Serie: <input type="text" name="titulo">
+    </p>
+    <p style="color:black; margin-bottom: 45px">
+        Genero: <input type="text" name="genero">
+    </p>
+    <p style="color:black; margin-bottom: 45px">
+        Temporadas: <input type="number" name="temporadas">
+    </p>
+    <p style="color:black; margin-bottom: 45px">
+        Fecha de estreno: <input type="date" name="fecha_estreno">
+    </p>
+    
+    <input
+        style="margin-bottom:30px;background-color:darkslategrey;color:aliceblue; border-radius: 10px;padding: 8px;"
+        type="submit" value="AGREGAR SERIE">
+</form>
+
+{% endblock %}

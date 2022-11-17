@@ -1,0 +1,27 @@
+{% extends "mainAPP/base.html" %}
+
+
+{% block contenido %}
+
+<form method="get">
+
+    <p>
+        Nombre actor: <input type="text" name="nombre_actor">
+    </p>
+
+    <input type="submit" value="Buscar">
+</form>
+
+
+{% if listado_actores %}
+
+<ul>
+    {% for actor in listado_actores %}
+    <li>{{actor.nombre_apellido}} || {{actor.edad}} años || {{actor.origen}}</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+
+{% endblock %}

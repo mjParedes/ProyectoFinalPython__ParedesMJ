@@ -1,0 +1,46 @@
+{% extends 'mainAPP/base.html' %}
+
+
+{% block contenido %}
+
+<h2 style="margin: 30px;">AGREGAR ACTORES AL BD</h2>
+
+<form style="margin: 30px;" action="/moviefy/actores/crear/" method="post">
+    {% csrf_token %}
+
+    <p style="color:black; margin-bottom: 45px;">
+        Nombre: <input type="text" name="nombre_apellido">
+    </p>
+    <p style="color:black; margin-bottom: 45px">
+        Nacionalidad: <input type="text" name="origen">
+    </p>
+    <p style="color:black; margin-bottom: 45px">
+        Edad: <input type="number" name="edad">
+    </p>
+    
+    <input
+        style="margin-bottom:30px;background-color:darkslategrey;color:aliceblue; border-radius: 10px;padding: 8px;"
+        type="submit" value="AGREGAR ACTOR">
+</form>
+
+
+
+
+
+
+
+
+<!-- <h2 style="margin:30px">AGREGAR ACTORES AL BD</h2>
+
+<form style="color:black; margin: 20px;" action="/moviefy/actores/crear/" method="post">
+
+    {% csrf_token %}
+
+    {{ formulario.as_p }}
+
+    <input style="margin-bottom:30px;background-color:darkslategrey;color:aliceblue; border-radius: 10px;padding: 8px;"
+        type="submit" value="AGREGAR ACTOR">
+</form> -->
+
+
+{% endblock %}
